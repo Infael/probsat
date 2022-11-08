@@ -28,8 +28,6 @@ class SAT:
         self.clauses = data
         self.evaluation = [not not r.getrandbits(1) if random else True for _ in range(self.vars_count)]
 
-    def __str__(self) -> str:
-        return f"vars: {self.vars_count}\nclauses: {self.clause_count}\ndata: {self.clauses}\nactual evaluation: {self.evaluation}"
 
     def is_eval_satisfying(self):
         return not False in self.clauses_evaluation()
